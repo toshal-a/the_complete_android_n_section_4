@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="181dp"
+        android:layout_height="193dp"
+        android:backgroundTint="#8BC34A"
+        android:onClick="startBrainTrainer"
+        android:text="GO!"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sumScreen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/timerSumCountBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="sumTextView,questionCounterText,timerCountDown"
+            tools:layout_editor_absoluteY="715dp" />
+
+        <TextView
+            android:id="@+id/timerCountDown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#FFEB3B"
+            android:padding="10dp"
+            android:text="30s"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:cornerRadius="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/sumTextView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sumTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="2 + 3"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/timerCountDown"
+            app:layout_constraintEnd_toStartOf="@+id/questionCounterText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/timerCountDown"
+            app:layout_constraintTop_toTopOf="@+id/timerCountDown" />
+
+        <TextView
+            android:id="@+id/questionCounterText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#FF9800"
+            android:padding="10dp"
+            android:text="9/13"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/timerCountDown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sumTextView"
+            app:layout_constraintTop_toTopOf="@+id/timerCountDown" />
+
+        <Button
+            android:id="@+id/optionOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:insetBottom="0dp"
+            android:onClick="sumOptionClicked"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="22"
+            android:textSize="50sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/optionTwo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timerSumCountBarrier"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/optionTwo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#8BC34A"
+            android:insetBottom="0dp"
+            android:onClick="sumOptionClicked"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="28"
+            android:textSize="50sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/optionOne"
+            app:layout_constraintTop_toTopOf="@+id/optionOne" />
+
+        <Button
+            android:id="@+id/optionThree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9C27B0"
+            android:insetTop="0dp"
+            android:onClick="sumOptionClicked"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="22"
+            android:textSize="50sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/optionFour"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/optionOne" />
+
+        <Button
+            android:id="@+id/optionFour"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00BCD4"
+            android:insetTop="0dp"
+            android:onClick="sumOptionClicked"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="28"
+            android:textSize="50sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/optionThree"
+            app:layout_constraintTop_toTopOf="@+id/optionThree" />
+
+        <TextView
+            android:id="@+id/answerJudgmentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Correct!"
+            android:textSize="30sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/optionsBarrier" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/optionsBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="optionFour,optionThree"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="317dp" />
+
+        <Button
+            android:id="@+id/playBrainTrainerAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:onClick="restartBrainTrainer"
+            android:text="Play Again"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answerJudgmentText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
